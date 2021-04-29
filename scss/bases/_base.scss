@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+
+    margin: 0; top: 0;
+
+    overflow-x: hidden;
+
+    background: #f9d7cf;
+
+    main {
+        flex: 1 0 auto;
+    }
+}

@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+html {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+* *:before *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  margin: 0;
+  top: 0;
+  overflow-x: hidden;
+  background: #f9d7cf;
+}
+body main {
+  flex: 1 0 auto;
+}
+
+.dragger {
+  position: absolute;
+  max-width: 576px;
+  background-color: rgba(245, 245, 245, 0.98);
+  color: #929191;
+  padding: 48px 40px 54px;
+  border-radius: 24px;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.14), 0px 2px 12px rgba(0, 0, 0, 0.06);
+  cursor: move;
+  z-index: 1;
+  transition: transform 5ms ease-in-out;
+}
+.dragger h3 {
+  margin-top: 0;
+  color: #505050;
+}
+.dragger:active {
+  cursor: grabbing;
+}
+
+/*# sourceMappingURL=style.css.map */
