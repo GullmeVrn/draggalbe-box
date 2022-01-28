@@ -1,28 +1,28 @@
-const el = document.querySelector('.dragger');
+const el = [...document.querySelector('.dragger')]
 
-el.addEventListener('mousedown', dragStart);
+el.map(elem => {
+  elem.addEventListener('mousedown', (e) => {
+    window.addEventListener('mousemove', drag)
+    window.addEventListener('mouseup', dragEnd)
 
-function dragStart(e) {
-    window.addEventListener('mousemove', drag);
-    window.addEventListener('mouseup', dragEnd);
-
-    let initialX = e.clientX; 
-    let initialY = e.clientY;
+    let initialX = e.clientX
+    let initialY = e.clientY
 
     function drag(e) {
-        let currentX = initialX - e.clientX;
-        let currentY = initialY - e.clientY;
+        let currentX = initialX - e.clientX
+        let currentY = initialY - e.clientY
 
         const rect = el.getBoundingClientRect();
-        el.style.left = rect.left - currentX + "px";
-        el.style.top = rect.top - currentY + "px";
+        el.style.left = rect.left - currentX + "px"
+        el.style.top = rect.top - currentY + "px"
 
-        initialX = e.clientX;
-        initialY = e.clientY;
+        initialX = e.clientX
+        initialY = e.clientY
     }
 
     function dragEnd() {
-        window.removeEventListener('mousemove', drag);
-        window.removeEventListener('mouseup', dragEnd);
+        window.removeEventListener('mousemove', drag)
+        window.removeEventListener('mouseup', dragEnd)
     }
-}
+  }
+})
